@@ -1,0 +1,23 @@
+{
+  "name": "@danielvaijk/config-format",
+  "description": "My personal configs for formatting.",
+  "version": "1.0.0",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielvaijk/config.git"
+  },
+  "author": "Daniel van Dijk",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/danielvaijk/config/issues"
+  },
+  "homepage": "https://github.com/danielvaijk/config#readme",
+  "engines": {
+    "node": "18.16.0"
+  },
+  "dependencies": {
+    "prettier": "2.7.1",
+    "prettier-plugin-tailwindcss": "0.2.1"
+  }
+}

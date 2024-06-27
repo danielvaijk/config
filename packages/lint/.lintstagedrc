@@ -1,0 +1,4 @@
+{
+    "*.{js,ts,tsx}": "eslint --quiet",
+    "*.{ts,tsx}": "tsc-files --noEmit"
+}
