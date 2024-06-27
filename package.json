@@ -1,0 +1,20 @@
+{
+  "name": "@danielvaijk/config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "My personal development configs.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielvaijk/config.git"
+  },
+  "author": "Daniel van Dijk",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/danielvaijk/config/issues"
+  },
+  "homepage": "https://github.com/danielvaijk/config#readme",
+  "workspaces": ["packages/*"],
+  "engines": {
+    "node": "18.16.0"
+  }
+}
