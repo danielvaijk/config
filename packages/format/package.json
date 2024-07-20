@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/danielvaijk/config#readme",
   "engines": {
-    "node": "18.16.0"
+    "node": "18.18.0"
   },
   "dependencies": {
     "prettier": "2.7.1",
