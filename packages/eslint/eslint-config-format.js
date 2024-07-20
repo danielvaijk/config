@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   plugins: ["prettier", "sort-destructure-keys", "typescript-sort-keys"],
   rules: {
     /**

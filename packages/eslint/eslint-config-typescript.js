@@ -6,7 +6,7 @@
  * TODO: @typescript-eslint/prefer-readonly-parameter-types
  * TODO: @typescript-eslint/typedef
  */
-module.exports = {
+export default {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: "./tsconfig.json",
