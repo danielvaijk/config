@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   plugins: ["import", "no-relative-import-paths"],
   rules: {
     /**
