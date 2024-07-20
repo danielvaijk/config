@@ -1,4 +1,13 @@
-export default {
+/**
+ * Might be interesting to enable in the future:
+ * TODO: react/display-name
+ * TODO: react/forbid-prop-types
+ * TODO: react/static-property-placement
+ *
+ * Temporarily disabled due to being buggy (at the time):
+ * TODO: react/jsx-handler-names
+ */
+module.exports = {
   plugins: ["react", "react-hooks"],
   settings: {
     react: {
@@ -34,7 +43,7 @@ export default {
       },
     ],
     "react/destructuring-assignment": "off",
-    "react/display-name": "off", // TODO: Might be interesting to enable this in the future.
+    "react/display-name": "off",
     "react/forbid-component-props": [
       "error",
       {
@@ -49,7 +58,7 @@ export default {
     ],
     "react/forbid-elements": "off",
     "react/forbid-foreign-prop-types": "error",
-    "react/forbid-prop-types": "off", // TODO: Might be interesting to enable this in the future.
+    "react/forbid-prop-types": "off",
     "react/function-component-definition": [
       "error",
       {
@@ -141,7 +150,7 @@ export default {
     "react/sort-comp": "off",
     "react/sort-prop-types": "off",
     "react/state-in-constructor": ["error", "always"],
-    "react/static-property-placement": "off", // TODO: Might be interesting to enable this in the future.
+    "react/static-property-placement": "off",
     "react/style-prop-object": [
       "error",
       {
@@ -187,7 +196,7 @@ export default {
     ],
     "react/jsx-first-prop-new-line": "off", // Handled by Prettier.
     "react/jsx-fragments": ["error", "element"],
-    "react/jsx-handler-names": "off", // FIXME: Switched off for now as it's a bit buggy.
+    "react/jsx-handler-names": "off",
     "react/jsx-indent": "off", // Handled by Prettier.
     "react/jsx-indent-props": "off", // Handled by Prettier.
     "react/jsx-key": "error",
