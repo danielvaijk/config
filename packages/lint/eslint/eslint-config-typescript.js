@@ -284,7 +284,11 @@ module.exports = {
             "error",
             {
                 allowAny: false,
-                checkCompoundAssignments: true,
+                allowBoolean: false,
+                allowNullish: false,
+                allowNumberAndString: false,
+                allowRegExp: false,
+                skipCompoundAssignments: false,
             },
         ],
         "@typescript-eslint/restrict-template-expressions": [
