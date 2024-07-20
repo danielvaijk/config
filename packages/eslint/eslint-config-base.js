@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   settings: {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"],

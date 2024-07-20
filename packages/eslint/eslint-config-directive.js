@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   plugins: ["eslint-comments"],
   rules: {
     "eslint-comments/disable-enable-pair": [

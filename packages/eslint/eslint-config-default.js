@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   reportUnusedDisableDirectives: true,
   env: {
     // This also automatically sets parserOptions.ecmaVersion to '11'.
