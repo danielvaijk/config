@@ -1,15 +1,4 @@
 export default {
-  settings: {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"],
-    },
-    "import/resolver": {
-      typescript: {
-        alwaysTryTypes: true,
-        project: "tsconfig.json",
-      },
-    },
-  },
   overrides: [
     {
       files: "*.js",
