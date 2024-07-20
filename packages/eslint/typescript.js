@@ -1,13 +1,12 @@
 /**
- * A list of rules that are pending to be checked and/or added:
- *
+ * Pending to be checked and/or added:
  * TODO: @typescript-eslint/member-ordering
  * TODO: @typescript-eslint/naming-convention
  * TODO: @typescript-eslint/prefer-readonly-parameter-types
  * TODO: @typescript-eslint/typedef
  */
-export default {
-  plugins: ["@typescript-eslint"],
+module.exports = {
+  plugins: ["@typescript-eslint", "typescript-sort-keys"],
   settings: {
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"],
@@ -24,6 +23,9 @@ export default {
     project: "./tsconfig.json",
   },
   rules: {
+    /**
+     * TypeScript.
+     */
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": [
       "error",
@@ -457,5 +459,18 @@ export default {
     "@typescript-eslint/padding-line-between-statements": "off", // Handled by Prettier?
     "@typescript-eslint/require-await": "off",
     "@typescript-eslint/return-await": "warn",
+    /**
+     * TypeScript key sorting.
+     */
+    "typescript-sort-keys/interface": "error",
+    "typescript-sort-keys/string-enum": "error",
   },
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      rules: {
+        "no-undef": "off", // Disabled since TypeScript does a better job at this.
+      },
+    },
+  ],
 };
