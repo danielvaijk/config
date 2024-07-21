@@ -416,7 +416,7 @@ module.exports = {
         int32Hint: false,
       },
     ],
-    "no-continue": "error",
+    "no-continue": "off",
     "no-inline-comments": [
       "error",
       {
@@ -433,7 +433,7 @@ module.exports = {
       },
     ],
     "no-multiple-empty-lines": "off", // Handled by Prettier.
-    "no-negated-condition": "error",
+    "no-negated-condition": "off",
     "no-nested-ternary": "error",
     "no-new-object": "error",
     "no-plusplus": [
@@ -449,7 +449,7 @@ module.exports = {
         allowIndentationTabs: false,
       },
     ],
-    "no-ternary": "error",
+    "no-ternary": "off",
     "no-trailing-spaces": [
       "error",
       {
@@ -652,7 +652,7 @@ module.exports = {
      */
     "import/export": "error",
     "import/no-named-as-default": "error",
-    "import/no-named-as-default-member": "error",
+    "import/no-named-as-default-member": "off",
     "import/no-deprecated": "error",
     "import/no-extraneous-dependencies": "off",
     "import/no-mutable-exports": "error",
@@ -698,7 +698,7 @@ module.exports = {
     "import/no-unassigned-import": [
       "error",
       {
-        allow: ["**/index.css", "reflect-metadata"],
+        allow: ["**/*.css", "**/*.scss", "reflect-metadata"],
       },
     ],
     "import/no-named-default": "error",
