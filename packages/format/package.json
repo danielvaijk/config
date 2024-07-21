@@ -1,5 +1,5 @@
 {
-  "name": "@danielvaijk/config-format",
+  "name": "@danielvaijk/format-config",
   "description": "My personal configs for formatting.",
   "version": "1.0.0",
   "private": false,
@@ -16,6 +16,9 @@
   "engines": {
     "node": "18.18.0"
   },
+  "files": [
+    ".prettierrc"
+  ],
   "dependencies": {
     "prettier": "2.7.1",
     "prettier-plugin-tailwindcss": "0.2.1"

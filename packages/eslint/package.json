@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": false,
   "files": [
-    "*.js"
+    "*.js",
+    ".lintstagedrc"
   ],
   "description": "My personal configs for linting.",
   "repository": {
