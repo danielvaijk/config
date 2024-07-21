@@ -1,7 +1,7 @@
 {
   "name": "@danielvaijk/prettier-config",
   "description": "My personal config for Prettier.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "main": "index.js",
   "repository": {
@@ -21,7 +21,9 @@
     "index.js"
   ],
   "dependencies": {
-    "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.5"
+  },
+  "peerDependencies": {
+    "prettier": "3.3.3"
   }
 }
