@@ -1,9 +1,10 @@
 {
   "name": "@danielvaijk/prettier-config",
   "description": "My personal config for Prettier.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danielvaijk/config.git"
@@ -18,7 +19,8 @@
     "node": "18.18.0"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "dependencies": {
     "prettier-plugin-tailwindcss": "0.6.5"
