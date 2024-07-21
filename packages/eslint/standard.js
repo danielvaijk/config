@@ -326,13 +326,7 @@ module.exports = {
         includeCommonJSModuleExports: true,
       },
     ],
-    "func-names": [
-      "error",
-      "as-needed",
-      {
-        generators: "always",
-      },
-    ],
+    "func-names": ["error", "as-needed"],
     "func-style": [
       "error",
       "declaration",
