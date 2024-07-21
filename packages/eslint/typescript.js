@@ -159,12 +159,6 @@ module.exports = {
       },
     ],
     "@typescript-eslint/no-for-in-array": "error",
-    "@typescript-eslint/no-implicit-any-catch": [
-      "error",
-      {
-        allowExplicitAny: false,
-      },
-    ],
     "@typescript-eslint/no-implied-eval": "error",
     "@typescript-eslint/no-inferrable-types": [
       "error",
@@ -204,7 +198,6 @@ module.exports = {
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
     "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
     "@typescript-eslint/no-non-null-assertion": "error",
-    "@typescript-eslint/no-parameter-properties": "error",
     "@typescript-eslint/no-require-imports": "error",
     "@typescript-eslint/no-this-alias": [
       "error",
@@ -378,12 +371,6 @@ module.exports = {
     ],
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-dupe-class-members": "error",
-    "@typescript-eslint/no-duplicate-imports": [
-      "error",
-      {
-        includeExports: true,
-      },
-    ],
     "@typescript-eslint/no-empty-function": [
       "error",
       {
