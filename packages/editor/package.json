@@ -1,5 +1,5 @@
 {
-  "name": "@danielvaijk/config-editor",
+  "name": "@danielvaijk/editor-config",
   "description": "My personal configs for IDEs.",
   "version": "1.0.0",
   "private": false,
@@ -15,5 +15,9 @@
   "homepage": "https://github.com/danielvaijk/config#readme",
   "engines": {
     "node": "18.18.0"
-  }
+  },
+  "files": [
+    ".editorconfig",
+    ".nvmrc"
+  ]
 }
