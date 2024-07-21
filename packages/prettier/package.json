@@ -1,8 +1,9 @@
 {
-  "name": "@danielvaijk/format-config",
-  "description": "My personal configs for formatting.",
+  "name": "@danielvaijk/prettier-config",
+  "description": "My personal config for Prettier.",
   "version": "1.0.0",
   "private": false,
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danielvaijk/config.git"
@@ -17,10 +18,10 @@
     "node": "18.18.0"
   },
   "files": [
-    ".prettierrc"
+    "index.js"
   ],
   "dependencies": {
-    "prettier": "2.7.1",
-    "prettier-plugin-tailwindcss": "0.2.1"
+    "prettier": "3.3.3",
+    "prettier-plugin-tailwindcss": "0.6.5"
   }
 }
