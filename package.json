@@ -1,7 +1,7 @@
 {
   "name": "@danielvaijk/config",
   "description": "My personal configs for linting, formatting, etc.",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "workspaces": [
     "packages/*"
   ]
