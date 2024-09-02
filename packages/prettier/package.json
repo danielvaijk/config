@@ -10,7 +10,7 @@
     "url": "git+https://github.com/danielvaijk/config.git"
   },
   "author": "Daniel van Dijk",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/danielvaijk/config/issues"
   },
