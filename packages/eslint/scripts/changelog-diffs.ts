@@ -59,9 +59,18 @@ function compareVersions(v1: string, v2: string): number {
   return 0;
 }
 
-async function processPackage(config: PackageConfig) {
+function sanitizeFilename(packageName: string): string {
+  // Replace @ and / with safe characters
+  return packageName.replace(/@/g, "").replace(/\//g, "-");
+}
+
+async function processPackage(
+  config: PackageConfig,
+  allReleases: ReleaseListItem[],
+  releaseBodyCache: Map<string, string>
+) {
   const { name: packageName, repo } = config;
-  const outputFile = `${packageName}-diff.md`;
+  const outputFile = `${sanitizeFilename(packageName)}-diff.md`;
 
   console.log(`\nChecking ${packageName}...`);
 
@@ -73,8 +82,6 @@ async function processPackage(config: PackageConfig) {
   }
 
   console.log(`  Current version: ${currentVersion}`);
-
-  const allReleases = await getReleases(repo);
 
   // Filter releases newer than current version
   const newerReleases = allReleases.filter((release) => {
@@ -100,8 +107,16 @@ async function processPackage(config: PackageConfig) {
 
   // Fetch full release details for each
   for (const release of newerReleases) {
-    console.log(`  Fetching changelog for ${release.tagName}...`);
-    const body = await getReleaseBody(repo, release.tagName);
+    const cacheKey = `${repo}:${release.tagName}`;
+
+    let body: string;
+    if (releaseBodyCache.has(cacheKey)) {
+      body = releaseBodyCache.get(cacheKey)!;
+    } else {
+      console.log(`  Fetching changelog for ${release.tagName}...`);
+      body = await getReleaseBody(repo, release.tagName);
+      releaseBodyCache.set(cacheKey, body);
+    }
 
     markdown += `## ${release.tagName}\n\n`;
     markdown += `**Published:** ${new Date(release.publishedAt).toLocaleDateString()}\n\n`;
@@ -117,12 +132,59 @@ async function processPackage(config: PackageConfig) {
 async function main() {
   const packages: PackageConfig[] = [
     { name: "eslint", repo: "eslint/eslint" },
+    { name: "@typescript-eslint/eslint-plugin", repo: "typescript-eslint/typescript-eslint" },
+    { name: "@typescript-eslint/parser", repo: "typescript-eslint/typescript-eslint" },
+    {
+      name: "eslint-import-resolver-typescript",
+      repo: "import-js/eslint-import-resolver-typescript",
+    },
+    { name: "eslint-plugin-eslint-comments", repo: "mysticatea/eslint-plugin-eslint-comments" },
+    { name: "eslint-plugin-import", repo: "import-js/eslint-plugin-import" },
+    {
+      name: "eslint-plugin-no-relative-import-paths",
+      repo: "MelvinVermeer/eslint-plugin-no-relative-import-paths",
+    },
+    { name: "eslint-plugin-prettier", repo: "prettier/eslint-plugin-prettier" },
+    { name: "eslint-plugin-qwik", repo: "QwikDev/qwik" },
+    { name: "eslint-plugin-react", repo: "jsx-eslint/eslint-plugin-react" },
+    { name: "eslint-plugin-react-hooks", repo: "facebook/react" },
+    {
+      name: "eslint-plugin-sort-destructure-keys",
+      repo: "mthadley/eslint-plugin-sort-destructure-keys",
+    },
+    {
+      name: "eslint-plugin-typescript-sort-keys",
+      repo: "infctr/eslint-plugin-typescript-sort-keys",
+    },
   ];
 
   console.log(`Processing ${packages.length} package(s)...\n`);
 
+  // Group packages by repo
+  const packagesByRepo = new Map<string, PackageConfig[]>();
   for (const pkg of packages) {
-    await processPackage(pkg);
+    if (!packagesByRepo.has(pkg.repo)) {
+      packagesByRepo.set(pkg.repo, []);
+    }
+    packagesByRepo.get(pkg.repo)!.push(pkg);
+  }
+
+  console.log(`Fetching releases from ${packagesByRepo.size} unique repo(s)...\n`);
+
+  // Fetch releases once per repo and cache release bodies
+  const releasesByRepo = new Map<string, ReleaseListItem[]>();
+  const releaseBodyCache = new Map<string, string>();
+
+  for (const repo of packagesByRepo.keys()) {
+    console.log(`Fetching releases for ${repo}...`);
+    const releases = await getReleases(repo);
+    releasesByRepo.set(repo, releases);
+  }
+
+  // Process all packages
+  for (const pkg of packages) {
+    const releases = releasesByRepo.get(pkg.repo)!;
+    await processPackage(pkg, releases, releaseBodyCache);
   }
 
   console.log("\n✓ Done!");
