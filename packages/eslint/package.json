@@ -20,6 +20,9 @@
   "engines": {
     "node": "18.18.0"
   },
+  "scripts": {
+    "changelog-diffs": "scripts/changelog-diffs.ts"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "7.16.1",
     "@typescript-eslint/parser": "7.16.1",
